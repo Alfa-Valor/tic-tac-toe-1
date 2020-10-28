@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 	start();
 	var blocks = document.getElementsByClassName("block");
-	for (i=0;i<9;i++) {
+	for (let i=0;i<9;i++) {
     	blocks[i].onclick = function() {
         	click(this.id);
     	};
@@ -28,7 +28,7 @@ function check(){
 		4:['1', '4', '7'],5:['2', '5', '8'],6:['3', '6', '9'],
 		7:['1', '5', '9'],8:['7', '5', '3'],
 	}
-	for(int=1;int<9;int++){
+	for(let i = 1;i<9;i++){
 		if(track[pos[int][0]-1]==="X"&&track[pos[int][1]-1]==="X"&&track[pos[int][2]-1]==="X"){
 			win("X");
 		}else if(track[pos[int][0]-1]==="O"&&track[pos[int][1]-1]==="O"&&track[pos[int][2]-1]==="O"){
@@ -44,7 +44,7 @@ function start(){
 	localStorage.version = "1.0";
 	localStorage.creator = "089 111 117 114 105 032 084 097 112 112 101 114";
 	localStorage.track = JSON.stringify(["","","","","","","","",""]);
-	for(int=1;int<10;int++){
+	for(let i = 1;i < 10; i++){
 		document.getElementById(int).innerHTML="";
 	}
 	document.getElementById("game_player").innerHTML = "X mag beginnen";
